@@ -30,7 +30,7 @@ fptr_t Global_pfArr[7] = {NULL, NULL, NULL, NULL, NULL, NULL, NULL};
 
 u8 DMA_u8DMAChannelInit(DMA_configStruct_t* Copy_pstructDMAChannelConfig)
 {
-	u8 Local_errorState = STD_TYPES_OK;
+	u8 Local_errorState = OK;
 
 	switch(Copy_pstructDMAChannelConfig -> channelNumber)
 	{
@@ -182,7 +182,7 @@ u8 DMA_u8DMAChannelInit(DMA_configStruct_t* Copy_pstructDMAChannelConfig)
 			break;
 
 		default:
-			Local_errorState = STD_TYPES_NOK;
+			Local_errorState = NOK;
 			break;
 	}
 
@@ -191,7 +191,7 @@ u8 DMA_u8DMAChannelInit(DMA_configStruct_t* Copy_pstructDMAChannelConfig)
 
 u8 DMA_u8DMAChannelTransfer(u8 Copy_u8ChannelNumber, u32 Copy_u32SrcAddress, u32 Copy_u32DesAddress, u16 Copy_u16NumberOfTransfers)
 {
-	u8 Local_errorState = STD_TYPES_NOK;
+	u8 Local_errorState = NOK;
 
 	switch(Copy_u8ChannelNumber)
 	{
@@ -418,7 +418,7 @@ u8 DMA_u8DMAChannelTransfer(u8 Copy_u8ChannelNumber, u32 Copy_u32SrcAddress, u32
 
 u8 DMA_u8DMAChannelTransfer_busyWait(u8 Copy_u8ChannelNumber, u32 Copy_u32SrcAddress, u32 Copy_u32DesAddress, u16 Copy_u16NumberOfTransfers)
 {
-	u8 Local_errorState = STD_TYPES_OK;
+	u8 Local_errorState = OK;
 
 	switch(Copy_u8ChannelNumber)
 	{
@@ -651,7 +651,7 @@ u8 DMA_u8DMAChannelTransfer_busyWait(u8 Copy_u8ChannelNumber, u32 Copy_u32SrcAdd
 
 u8 DMA_u8DMASetCallBack(u8 Copy_u8ChannelNumber, void (*pf) (void))
 {
-	u8 Local_errorState = STD_TYPES_OK;
+	u8 Local_errorState = OK;
 
 	Global_pfArr[Copy_u8ChannelNumber - 1] = pf;
 
